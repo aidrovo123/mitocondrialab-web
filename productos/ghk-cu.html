@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GHK-Cu 50mg - Tripéptido de cobre para regeneración tisular, síntesis de colágeno y renovación cutánea. Investigación en cicatrización y firmeza.">
+    <title>GHK-Cu 50mg - Tripéptido de Cobre | Mitocondria Lab</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #003d7a; --primary-light: #0052a3; --accent: #1a73e8; --text: #202124; --text-light: #5f6368; --bg: #ffffff; --bg-light: #f8f9fa; --border: #dadce0; --success: #188038; --warning: #f57c00; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; line-height: 1.7; color: var(--text); background: var(--bg); }
+        header { background: var(--primary); color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .header-content { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: white; }
+        .logo img { width: 35px; height: 35px; border-radius: 50%; }
+        nav a { color: white; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .back-link:hover { text-decoration: underline; }
+        .product-header { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; align-items: start; }
+        .product-image { width: 100%; max-height: 500px; background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .product-image img { width: 100%; height: auto; object-fit: contain; padding: 20px; }
+        .product-details h1 { font-size: 2.2rem; color: var(--primary); margin-bottom: 0.5rem; }
+        .product-details .subtitle { font-size: 1.1rem; color: var(--text-light); margin-bottom: 1rem; }
+        .product-details .price { font-size: 1.8rem; color: var(--accent); font-weight: 700; margin-bottom: 1.5rem; }
+        .product-details .specs { font-size: 0.95rem; color: var(--text-light); margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); line-height: 1.8; }
+        .product-details .specs strong { color: var(--primary); }
+        .btn { display: inline-block; padding: 0.9rem 2rem; background: var(--accent); color: white; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.3s; font-size: 0.95rem; }
+        .btn:hover { background: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3); }
+        .btn-whatsapp { background: #25d366; }
+        .btn-whatsapp:hover { background: #1da853; }
+        .section { margin: 2.5rem 0; padding: 2rem; background: var(--bg-light); border-radius: 8px; border-left: 5px solid var(--accent); }
+        .section h2 { color: var(--primary); font-size: 1.5rem; margin-bottom: 1.2rem; }
+        .section h3 { color: var(--primary-light); font-size: 1.1rem; margin-top: 1.2rem; margin-bottom: 0.6rem; font-weight: 600; }
+        .section p { margin-bottom: 0.8rem; color: var(--text); }
+        .section ul { margin-left: 2rem; margin-bottom: 1rem; }
+        .section li { margin-bottom: 0.6rem; color: var(--text); }
+        .table-responsive { overflow-x: auto; margin: 1rem 0; }
+        table { width: 100%; border-collapse: collapse; background: white; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--primary); color: white; font-weight: 600; }
+        tr:hover { background: #f5f5f5; }
+        .benefit-box { background: white; padding: 1.5rem; border-left: 4px solid var(--success); margin-bottom: 1rem; border-radius: 4px; }
+        .benefit-box strong { color: var(--success); }
+        .warning-box { background: #fff3e0; padding: 1.5rem; border-left: 4px solid var(--warning); margin: 1.5rem 0; border-radius: 4px; }
+        .warning-box strong { color: var(--warning); }
+        .info-box { background: #e3f2fd; padding: 1.5rem; border-left: 4px solid var(--accent); margin: 1.5rem 0; border-radius: 4px; }
+        .mechanism-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1rem 0; }
+        .mech-card { background: white; padding: 1.5rem; border: 1px solid var(--border); border-radius: 6px; }
+        .mech-card h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1rem; }
+        .mech-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; }
+        footer { background: var(--primary); color: white; padding: 2rem; text-align: center; margin-top: 3rem; font-size: 0.85rem; }
+        .research-label { display: inline-block; background: var(--accent); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
+        @media (max-width: 768px) { 
+            .product-header { grid-template-columns: 1fr; gap: 2rem; }
+            .mechanism-grid { grid-template-columns: 1fr; }
+            .section { padding: 1.5rem; }
+            .section h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo"><img src="/favicon.svg" alt="Logo"> Mitocondria Lab</a>
+            <nav><a href="/">Volver</a></nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="/" class="back-link">← Volver a productos</a>
+
+        <div class="product-header">
+            <div class="product-image"><img src="/images/ghk-cu-vial.jpg" alt="GHK-Cu 50mg Vial"></div>
+            <div class="product-details">
+                <h1>GHK-Cu</h1>
+                <div class="subtitle">Tripéptido de Cobre - Regeneración Tisular & Colágeno</div>
+                <span class="research-label">🧪 RESEARCH CHEMICALS</span>
+                <div class="specs">
+                    <strong>Especificaciones:</strong><br>
+                    Dosis: 50mg / Vial<br>
+                    Forma: Liofilizado (polvo)<br>
+                    Composición: Glicina-Histidina-Lisina + Cobre (Cu²⁺)<br>
+                    Pureza: >98% (HPLC)<br>
+                    Origen: Laboratorio certificado<br>
+                    Análisis: MS confirmado
+                </div>
+                <div class="price">$110 USD</div>
+                <a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20me%20interesa%20GHK-Cu%2050mg%20-%20información%20completa" target="_blank" class="btn btn-whatsapp">💬 Consultar Disponibilidad</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>¿Qué es GHK-Cu (50mg)?</h2>
+            <p><strong>GHK-Cu</strong> es un tripéptido natural de cobre (secuencia aminoacídica: Glicina-Histidina-Lisina complejado con iones cúpricos Cu²⁺) que actúa como cofactor y regulador de múltiples procesos biológicos.</p>
+            <p>El tripéptido GHK fue descubierto en suero humano por el investigador Loren Pickart en los años 1970, donde se encontró en concentraciones micromolares. Su capacidad para promover síntesis de colágeno, elastina y GAG (glicosaminoglicanos) lo convierte en un objetivo importante para:</p>
+            <ul>
+                <li><strong>Reparación y regeneración tisular</strong> — estimula síntesis de matriz extracelular</li>
+                <li><strong>Anti-envejecimiento cutáneo</strong> — mejora firmeza, elasticidad y tono de piel</li>
+                <li><strong>Cicatrización acelerada</strong> — estimula reepitelización y remodelación de tejido</li>
+                <li><strong>Homeostasis inflamatoria</strong> — regula equilibrio de citoquinas pro/anti-inflamatorias</li>
+                <li><strong>Estabilización vascular</strong> — mejora integridad endotelial y angiogénesis</li>
+            </ul>
+            <p>GHK-Cu existe naturalmente en plasma humano, pero sus concentraciones disminuyen con la edad (~50% a los 60 años), lo que contribuye al envejecimiento tisular y menor capacidad regenerativa.</p>
+        </div>
+
+        <div class="section">
+            <h2>Mecanismos de Acción Bioquímicos</h2>
+            
+            <h3>1. Estimulación de Síntesis de Colágeno & Elastina</h3>
+            <p>GHK-Cu actúa sobre fibroblastos cutáneos estimulando expresión de genes para colágeno tipo I, III, IV y elastina. Este efecto es:</p>
+            <ul>
+                <li><strong>Dosis-dependiente</strong> — máxima respuesta típicamente a 10-50 µM</li>
+                <li><strong>Mediado por receptores</strong> — interactúa con receptores acoplados a proteína G y TRP (transient receptor potential)</li>
+                <li><strong>Independiente de IGF-1</strong> — funciona sinérgicamente con factores de crecimiento pero por vías distintas</li>
+            </ul>
+
+            <h3>2. Modulación Inflamatoria & Inmunidad</h3>
+            <p>GHK-Cu reduce marcadores pro-inflamatorios (IL-6, TNF-α) e incrementa citoquinas reparadoras (IL-10, TGF-β). En heridas:</p>
+            <ul>
+                <li>Cambia fagocitos de fenotipo pro-inflamatorio (M1) a regenerativo (M2)</li>
+                <li>Estimula migración de queratinocitos y fibroblastos</li>
+                <li>Promueve angiogénesis temprana (aumento de VEGF)</li>
+            </ul>
+
+            <h3>3. Estabilización & Remodelación de Matriz Extracelular (ECM)</h3>
+            <p>GHK-Cu:</p>
+            <ul>
+                <li>Estimula síntesis de proteoglicanos (condroitín sulfato, heparán sulfato)</li>
+                <li>Regula actividad de metaloproteinasas (MMP) — equilibrio entre degradación y síntesis</li>
+                <li>Favorece entrecruzamiento de colágeno (lysyl oxidase) → mayor resistencia mecánica</li>
+            </ul>
+
+            <h3>4. Homeostasis de Cobre & Cofactores Enzimáticos</h3>
+            <p>El cobre en GHK-Cu actúa como cofactor para:</p>
+            <ul>
+                <li><strong>Lysyl oxidase (LOX)</strong> — oxidación de lisina → estabilización de colágeno y elastina</li>
+                <li><strong>Citocromo c oxidasa (mitocondrial)</strong> — energética celular mejorada</li>
+                <li><strong>Superóxido dismutasa (SOD)</strong> — defensa antioxidante</li>
+            </ul>
+
+            <div class="mechanism-grid">
+                <div class="mech-card">
+                    <h4>🔵 Fibroblastos</h4>
+                    <p><strong>Respuesta:</strong><br>
+                    ↑ Síntesis colágeno<br>
+                    ↑ Síntesis elastina<br>
+                    ↑ Motilidad migratoria</p>
+                </div>
+                <div class="mech-card">
+                    <h4>🟢 Queratinocitos</h4>
+                    <p><strong>Respuesta:</strong><br>
+                    ↑ Reepitelización<br>
+                    ↑ Adhesión y diferenciación<br>
+                    ↓ Apoptosis</p>
+                </div>
+                <div class="mech-card">
+                    <h4>🟠 Sistema Vascular</h4>
+                    <p><strong>Respuesta:</strong><br>
+                    ↑ VEGF y angiogénesis<br>
+                    ↑ Estabilización endotelial<br>
+                    ↓ Permeabilidad patológica</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Aplicaciones Clínicas & Experimentales</h2>
+            
+            <h3>Cicatrización & Reparación de Heridas</h3>
+            <p>Ensayos muestran que GHK-Cu acelera cierre de heridas, reduce formación de cicatrices deprimidas y mejora calidad estética del tejido cicatrizal. Mecanismos:</p>
+            <ul>
+                <li>Aumento de síntesis de colágeno en fase proliferativa (3-21 días)</li>
+                <li>Mejora de remodelación en fase de maduración (>21 días)</li>
+                <li>Reducción de contracción excesiva de herida</li>
+            </ul>
+
+            <h3>Envejecimiento Cutáneo & Cosmética</h3>
+            <p>Estudios dermataológicos sugieren que GHK-Cu tópico e inyectable mejora:</p>
+            <ul>
+                <li><strong>Líneas finas & arrugas</strong> — aumento de espesor de dermis (~20% en 12 semanas)</li>
+                <li><strong>Elasticidad & firmeza</strong> — medidas de biomecánica cutánea mejoran</li>
+                <li><strong>Luminosidad & tono</strong> — aumento de colágeno regulariza textura</li>
+                <li><strong>Cicatrices atróficas</strong> — elevación parcial/total en algunos casos</li>
+            </ul>
+
+            <h3>Regeneración Ósea & Periodontal</h3>
+            <p>En contexto oral:</p>
+            <ul>
+                <li>Estimula osteoblastos → síntesis de matriz ósea</li>
+                <li>Mejora cicatrización de heridas quirúrgicas orales</li>
+                <li>Potencial en regeneración de defectos periodontales</li>
+            </ul>
+
+            <h3>Recuperación Post-Procedimiento</h3>
+            <p>Después de procedimientos dermatológicos (láser, microneedling, peelings químicos):</p>
+            <ul>
+                <li>Acelera reepitelización</li>
+                <li>Reduce inflamación residual</li>
+                <li>Mejora resultados finales al estimular remodelación controlada</li>
+            </ul>
+
+            <div class="info-box">
+                <strong>📋 Nota de Calidad de Evidencia:</strong> La mayoría de datos provienen de estudios in vitro, modelo animal, y pequeños ensayos clínicos abiertos. Ensayos RCT ampliados aún están en marcha. El mecanismo de acción es robusto pero los efectos clínicos macroscópicos requieren más validación.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Farmacocinética & Estabilidad</h2>
+            <ul>
+                <li><strong>Vía:</strong> Típicamente inyección subcutánea, tópico, o intravenosa en contextos experimentales.</li>
+                <li><strong>Vida Media:</strong> GHK desnudo es degradado rápidamente (~minutos) por proteasas. La complejación con cobre (GHK-Cu) aumenta estabilidad pero aun así requiere reconstitución frecuente.</li>
+                <li><strong>Biodisponibilidad:</strong> Mejora significativamente cuando se disuelve en solución salina o en presencia de excipientes estabilizadores.</li>
+                <li><strong>Almacenamiento:</strong> Mantener en 2-8°C en forma liofilizada; una vez reconstituido, usar en 24-48 horas (refrigerado).</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Seguridad & Tolerabilidad</h2>
+            
+            <h3>Perfil de Seguridad</h3>
+            <p>GHK-Cu tiene <strong>perfil de seguridad excelente</strong>:</p>
+            <ul>
+                <li>Péptido endógeno → presente naturalmente en plasma humano</li>
+                <li>No tóxico en rango terapéutico (típicamente 1-100 µM)</li>
+                <li>Sin inhibición de citocromo P450</li>
+                <li>Sin potencial mutagénico o teratogénico confirmado</li>
+            </ul>
+
+            <h3>Reacciones Locales & Sistémicas</h3>
+            <ul>
+                <li><strong>Inyección SC:</strong> Eritema leve y transitorio (24-48h), raramente edema o prurito</li>
+                <li><strong>Tópico:</strong> Bien tolerado; raramente irritación en piel sensible</li>
+                <li><strong>Sistémico:</strong> Sin reportes de efectos adversos significativos en ensayos limitados</li>
+            </ul>
+
+            <h3>Interacciones</h3>
+            <ul>
+                <li>No se conocen interacciones significativas con fármacos comunes</li>
+                <li>Compatible con procedimientos dermatológicos estándar</li>
+                <li>Puede combinarse con otros péptidos (p.ej., BPC-157) teóricamente sin antagonismo</li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>⚠️ Embarazo & Lactancia:</strong> Datos limitados. Evitar durante embarazo y lactancia pendiente de más estudios de seguridad.
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Alergia al Cobre:</strong> Contraindicado en individuos con dermatitis de contacto por cobre o alergia documentada a cobre/níquel.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Análisis de Calidad - Certificaciones</h2>
+            <p>Todos nuestros productos GHK-Cu cumplen estándares GMP:</p>
+            <ul>
+                <li><strong>Pureza HPLC:</strong> >98%</li>
+                <li><strong>Espectrometría de Masas (MS):</strong> Confirmación de peso molecular exacto</li>
+                <li><strong>Análisis de Cobre:</strong> Valoración de contenido de Cu²⁺ (ICP-MS)</li>
+                <li><strong>Microbiología:</strong> Esterilidad verificada, libre de patógenos</li>
+                <li><strong>Certificado de Análisis:</strong> Disponible por lote, incluido con cada vial</li>
+                <li><strong>Estabilidad:</strong> Almacenar entre 2-8°C (refrigerado) o a temperatura ambiente en forma liofilizada sellada</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Estado Regulatorio</h2>
+            <ul>
+                <li><strong>Estado de Aprobación:</strong> Investigacional. GHK-Cu no es aprobado como medicamento en la mayoría de jurisdicciones.</li>
+                <li><strong>Uso Cosmético (Tópico):</strong> Permitido en algunos mercados (Europa, Japón) con regulaciones específicas de concentración y etiquetado.</li>
+                <li><strong>Uso en Investigación:</strong> Ampliamente utilizado en laboratorios de biología celular y modelos animales.</li>
+            </ul>
+        </div>
+
+        <div class="section" style="background: #e8f5e9; border-left-color: var(--success);">
+            <h2 style="color: var(--success);">Direcciones Futuras de Investigación</h2>
+            <ul>
+                <li>Ensayos clínicos fase II/III para cicatrización y anti-aging cutáneo</li>
+                <li>Combinaciones sinérgicas con otros péptidos (BPC-157, TB-500) y factores de crecimiento</li>
+                <li>Formulaciones mejoradas (nanofibras, sistemas de liberación controlada)</li>
+                <li>Aplicaciones en regeneración ósea y periodontal formalizadas</li>
+                <li>Mecanismos de senescencia cellular y envejecimiento sistémico</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0 2rem 0;">
+            <a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20me%20interesa%20GHK-Cu%2050mg%20-%20información%20completa" target="_blank" class="btn btn-whatsapp" style="padding: 1.2rem 2.5rem; font-size: 1.1rem;">💬 Consultar Disponibilidad y Protocolos</a>
+        </div>
+
+        <div class="section" style="background: #f3e5f5; border-left-color: #9c27b0; margin-top: 2rem;">
+            <h3 style="color: #7b1fa2;">Referencias Científicas Clave</h3>
+            <ul style="font-size: 0.9rem; color: var(--text-light);">
+                <li><strong>Dermatology Practical & Conceptual</strong> — GHK-Cu para envejecimiento cutáneo y cicatrización</li>
+                <li><strong>Journal of Peptide Science</strong> — Estructura, estabilidad y biodisponibilidad de GHK-Cu</li>
+                <li><strong>Wound Repair & Regeneration</strong> — Efectos en cicatrización de heridas y remodelación tisular</li>
+                <li><strong>Molecular and Cellular Biochemistry</strong> — Mecanismos de síntesis de colágeno y cofactor de cobre</li>
+                <li><strong>Experimental Dermatology</strong> — Estudios clínicos en anti-aging y reparación dérmica</li>
+                <li><strong>Cell Biology International</strong> — Proliferación de fibroblastos y migración celular</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p style="margin-bottom: 0.5rem;"><strong>Mitocondria Lab</strong> — Péptidos de investigación certificados</p>
+        <p style="margin-bottom: 0.5rem;">🧪 RESEARCH CHEMICALS - Para uso en investigación únicamente</p>
+        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.8);">Consulta a profesionales de salud calificados antes de cualquier uso. No se ofrecen recomendaciones médicas.</p>
+        <p style="font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 1rem;">&copy; 2026 Mitocondria Lab. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

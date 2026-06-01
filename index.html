@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mitocondria Lab: Péptidos certificados. Pureza garantizada, análisis HPLC/MS de terceros, envío seguro.">
+    <meta name="keywords" content="Retatrutide, BPC-157, Semax, TB-500, MOTS-C, certificados">
+    <title>Mitocondria Lab - Péptidos Certificados</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { 
+            --primary: #003d7a; 
+            --primary-light: #0052a3; 
+            --accent: #1a73e8; 
+            --accent-light: #5195f9;
+            --text: #202124; 
+            --text-light: #5f6368;
+            --bg: #ffffff; 
+            --bg-light: #f8f9fa;
+            --border: #dadce0;
+            --success: #188038;
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif; 
+            line-height: 1.5; 
+            color: var(--text); 
+            background: var(--bg); 
+        }
+        
+        /* Header */
+        header { 
+            background: var(--primary); 
+            color: white;
+            padding: 1rem 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+        .header-content { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 2rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            gap: 2rem; 
+        }
+        .logo { 
+            font-size: 1.3rem; 
+            font-weight: 600; 
+            display: flex; 
+            align-items: center; 
+            gap: 0.8rem; 
+            text-decoration: none; 
+            color: white; 
+        }
+        .logo img { 
+            width: 40px; 
+            height: 40px; 
+            border-radius: 50%; 
+            background: rgba(255,255,255,0.2); 
+            padding: 3px; 
+        }
+        nav { 
+            display: flex; 
+            align-items: center; 
+            gap: 2rem; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-size: 0.9rem; 
+            opacity: 0.9;
+            transition: opacity 0.3s; 
+        }
+        nav a:hover { 
+            opacity: 1; 
+        }
+        
+        /* Hero */
+        .hero { 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); 
+            color: white;
+            padding: 3rem 2rem; 
+            text-align: center; 
+        }
+        .hero h1 { 
+            font-size: 2rem; 
+            margin-bottom: 0.5rem; 
+            font-weight: 600;
+        }
+        .hero p { 
+            font-size: 1rem; 
+            opacity: 0.95;
+            max-width: 600px; 
+            margin: 0 auto; 
+        }
+        
+        /* Container */
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 2rem; 
+        }
+        
+        /* Section Title */
+        .section-title { 
+            font-size: 1.6rem; 
+            color: var(--primary); 
+            margin: 2.5rem 0 1.5rem; 
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Productos Grid */
+        .products-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            gap: 1.5rem; 
+            margin: 1.5rem 0; 
+        }
+        
+        .product-card { 
+            background: var(--bg-light); 
+            border: 1px solid var(--border); 
+            border-radius: 6px; 
+            overflow: hidden; 
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover { 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .product-image { 
+            width: 100%; 
+            height: 180px; 
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e8f0fe 100%); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 3rem; 
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .product-info { 
+            padding: 1.5rem; 
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-name { 
+            font-size: 1.2rem; 
+            color: var(--primary); 
+            margin-bottom: 0.3rem; 
+            font-weight: 600; 
+        }
+        .product-specs { 
+            font-size: 0.8rem; 
+            color: var(--text-light); 
+            margin-bottom: 0.8rem; 
+        }
+        .product-desc { 
+            font-size: 0.85rem; 
+            color: var(--text-light); 
+            margin-bottom: 1rem; 
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        .product-price { 
+            font-size: 1.4rem; 
+            color: var(--primary); 
+            font-weight: 700; 
+            margin-bottom: 1rem; 
+        }
+        
+        .btn-consult { 
+            display: block; 
+            width: 100%; 
+            padding: 0.8rem; 
+            background: var(--accent); 
+            color: white; 
+            border: none; 
+            border-radius: 4px; 
+            font-weight: 600; 
+            cursor: pointer; 
+            transition: background 0.3s; 
+            text-decoration: none; 
+            text-align: center; 
+            font-size: 0.9rem;
+        }
+        .btn-consult:hover { 
+            background: var(--primary); 
+        }
+        
+        /* Certifications */
+        .certifications { 
+            background: var(--bg-light); 
+            padding: 2rem; 
+            border-radius: 6px; 
+            border-left: 4px solid var(--success); 
+            margin: 2.5rem 0; 
+        }
+        .certifications h3 { 
+            color: var(--primary); 
+            margin-bottom: 1rem; 
+            font-size: 1.2rem;
+        }
+        .cert-item { 
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .cert-item:last-child { 
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .cert-icon { 
+            font-size: 1.5rem; 
+        }
+        .cert-content { 
+        }
+        .cert-content strong { 
+            color: var(--primary); 
+        }
+        .cert-content p { 
+            font-size: 0.85rem; 
+            color: var(--text-light); 
+            margin-top: 0.3rem;
+        }
+        
+        /* Why Choose */
+        .why-choose { 
+            background: var(--bg-light); 
+            padding: 2rem; 
+            border-radius: 6px; 
+            border: 1px solid var(--border); 
+            margin: 2.5rem 0; 
+        }
+        .why-choose h3 { 
+            color: var(--primary); 
+            margin-bottom: 1.5rem; 
+            font-size: 1.2rem;
+        }
+        .why-list { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 1.5rem; 
+        }
+        .why-item { 
+            display: flex;
+            gap: 1rem;
+        }
+        .why-icon { 
+            font-size: 1.3rem; 
+            min-width: 30px;
+        }
+        .why-content { 
+        }
+        .why-content strong { 
+            color: var(--primary); 
+            font-size: 0.95rem;
+        }
+        .why-content p { 
+            font-size: 0.85rem; 
+            color: var(--text-light); 
+            margin-top: 0.3rem;
+        }
+        
+        /* Contact */
+        .contact-section { 
+            background: var(--primary); 
+            color: white;
+            padding: 2rem; 
+            border-radius: 6px; 
+            text-align: center; 
+            margin: 2.5rem 0; 
+        }
+        .contact-section h3 { 
+            margin-bottom: 1rem; 
+            font-size: 1.2rem;
+        }
+        .contact-section p { 
+            margin-bottom: 0.5rem; 
+        }
+        .contact-email { 
+            font-size: 1rem; 
+            font-weight: 600; 
+            margin-top: 1rem;
+        }
+        
+        /* Footer */
+        footer { 
+            background: var(--primary); 
+            color: white;
+            padding: 2rem; 
+            text-align: center; 
+            margin-top: 3rem;
+            font-size: 0.85rem; 
+        }
+        footer p { 
+            margin: 0.3rem 0; 
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content { 
+                flex-direction: column; 
+                gap: 1rem; 
+            }
+            nav { 
+                flex-wrap: wrap; 
+                justify-content: center; 
+            }
+            .hero h1 { 
+                font-size: 1.5rem; 
+            }
+            .products-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .why-list { 
+                grid-template-columns: 1fr; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo"><img src="/favicon.svg" alt="Logo"> Mitocondria Lab</a>
+            <nav>
+                <a href="#peptidos">Péptidos</a>
+                <a href="#accesorios">Accesorios</a>
+                <a href="#calidad">Calidad</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+        <!-- BOTÓN CHAT TOP -->
+        <div style="background: white; padding: 1rem 2rem; text-align: center;">
+            <a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20tengo%20una%20consulta" target="_blank" style="display: inline-block; background: #25d366; color: white; padding: 0.8rem 2rem; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 1rem; transition: background 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">💬 Chat Rápido por WhatsApp</a>
+        </div>
+
+    <section style="padding: 4rem 2rem; background: #f8f9fa;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 2rem; color: #003d7a; margin-bottom: 2rem;">Nuestros Productos</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: relative;"><img src="https://mitocondrialab.com/images/retatrutide-vial.jpg" style="width: 100%; height: 250px; object-fit: cover; display: block;"><div style="padding: 1rem;"><h3 style="color: #003d7a; font-size: 1.1rem;">Retatrutide 10mg Vial</h3><p style="color: #1a73e8; font-size: 1.3rem; font-weight: bold; margin: 1rem 0;">$280</p><div style="display: flex; gap: 0.5rem;"><a href="/productos/retatrutide.html" style="flex: 1; background: #1a73e8; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Ver Más</a><a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20quisiera%20consultar%20disponibilidad%20de%20Retatrutide%2010mg" target="_blank" style="flex: 1; background: #25d366; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Consultar</a></div></div></div>
+                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><img src="https://mitocondrialab.com/images/reta-15mg-producto.jpg" style="width: 100%; height: 250px; object-fit: cover; display: block;"><div style="padding: 1rem;"><h3 style="color: #003d7a; font-size: 1.1rem;">Retatrutide 15mg Vial</h3><p style="color: #1a73e8; font-size: 1.3rem; font-weight: bold; margin: 1rem 0;">$380</p><div style="display: flex; gap: 0.5rem;"><a href="/productos/retatrutide-15mg.html" style="flex: 1; background: #1a73e8; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Ver Más</a><a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20quisiera%20consultar%20disponibilidad%20de%20Retatrutide%2015mg" target="_blank" style="flex: 1; background: #25d366; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Consultar</a></div></div></div>
+                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><img src="https://mitocondrialab.com/images/bpc-157-vial.jpg" style="width: 100%; height: 250px; object-fit: cover; display: block;"><div style="padding: 1rem;"><h3 style="color: #003d7a; font-size: 1.1rem;">BPC-157 10mg Vial</h3><p style="color: #1a73e8; font-size: 1.3rem; font-weight: bold; margin: 1rem 0;">$180</p><div style="display: flex; gap: 0.5rem;"><a href="/productos/bpc-157.html" style="flex: 1; background: #1a73e8; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Ver Más</a><a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20quisiera%20consultar%20disponibilidad%20de%20BPC-157" target="_blank" style="flex: 1; background: #25d366; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Consultar</a></div></div></div>
+                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><img src="https://mitocondrialab.com/images/semax-vial.jpg" style="width: 100%; height: 250px; object-fit: cover; display: block;"><div style="padding: 1rem;"><h3 style="color: #003d7a; font-size: 1.1rem;">Semax 10mg Vial</h3><p style="color: #1a73e8; font-size: 1.3rem; font-weight: bold; margin: 1rem 0;">$90</p><div style="display: flex; gap: 0.5rem;"><a href="/productos/semax.html" style="flex: 1; background: #1a73e8; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Ver Más</a><a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20quisiera%20consultar%20disponibilidad%20de%20Semax" target="_blank" style="flex: 1; background: #25d366; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Consultar</a></div></div></div>
+                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><img src="https://mitocondrialab.com/images/tb-500-vial.jpg" style="width: 100%; height: 250px; object-fit: cover; display: block;"><div style="padding: 1rem;"><h3 style="color: #003d7a; font-size: 1.1rem;">TB-500 Vial</h3><p style="color: #1a73e8; font-size: 1.3rem; font-weight: bold; margin: 1rem 0;">$160</p><div style="display: flex; gap: 0.5rem;"><a href="/productos/tb-500.html" style="flex: 1; background: #1a73e8; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Ver Más</a><a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20quisiera%20consultar%20disponibilidad%20de%20TB-500" target="_blank" style="flex: 1; background: #25d366; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Consultar</a></div></div></div>
+                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><img src="https://mitocondrialab.com/images/ghk-cu-vial.jpg" style="width: 100%; height: 250px; object-fit: cover; display: block;"><div style="padding: 1rem;"><h3 style="color: #003d7a; font-size: 1.1rem;">GHK-CU 50mg Vial</h3><p style="color: #1a73e8; font-size: 1.3rem; font-weight: bold; margin: 1rem 0;">$125</p><div style="display: flex; gap: 0.5rem;"><a href="/productos/ghk-cu.html" style="flex: 1; background: #1a73e8; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Ver Más</a><a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20quisiera%20consultar%20disponibilidad%20de%20GHK-CU" target="_blank" style="flex: 1; background: #25d366; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Consultar</a></div></div></div>
+                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><img src="https://mitocondrialab.com/images/mots-c-vial.jpg" style="width: 100%; height: 250px; object-fit: cover; display: block;"><div style="padding: 1rem;"><h3 style="color: #003d7a; font-size: 1.1rem;">MOTS-C 10mg Vial</h3><p style="color: #1a73e8; font-size: 1.3rem; font-weight: bold; margin: 1rem 0;">$110</p><div style="display: flex; gap: 0.5rem;"><a href="/productos/mots-c.html" style="flex: 1; background: #1a73e8; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Ver Más</a><a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20quisiera%20consultar%20disponibilidad%20de%20MOTS-C" target="_blank" style="flex: 1; background: #25d366; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Consultar</a></div></div></div>
+                <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: relative;"><div style="position: absolute; top: 10px; right: 10px; background: #ff4444; color: white; padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.85rem; font-weight: bold; z-index: 10;">⚠️ Low Stock</div><img src="https://mitocondrialab.com/images/cjc-1295-vial.jpg" style="width: 100%; height: 250px; object-fit: cover; display: block;"><div style="padding: 1rem;"><h3 style="color: #003d7a; font-size: 1.1rem;">CJC-1295 10mg Vial</h3><p style="color: #1a73e8; font-size: 1.3rem; font-weight: bold; margin: 1rem 0;">$250</p><div style="display: flex; gap: 0.5rem;"><a href="/productos/cjc-1295.html" style="flex: 1; background: #1a73e8; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Ver Más</a><a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20quisiera%20consultar%20disponibilidad%20de%20CJC-1295" target="_blank" style="flex: 1; background: #25d366; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Consultar</a></div></div></div>
+            </div>
+        </div>
+    </section>
+    <section style="padding: 4rem 2rem; background: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            
+            <h3 style="font-size: 1.4rem; color: #003d7a; margin-bottom: 1.5rem;">Aguas Bacteriostáticas</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="https://mitocondrialab.com/images/bac-water-10ml.jpg" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    <div style="padding: 1rem;">
+                        <h3 style="color: #003d7a; font-size: 1.1rem;">BAC Water 10ml</h3>
+                        <p style="color: #666; margin: 0.5rem 0;">Agua bacteriostática estéril</p>
+                        <p style="color: #1a73e8; font-size: 1.3rem; font-weight: bold; margin: 1rem 0;">$39</p>
+                        <a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20me%20interesa%20la%20BAC%20Water%2010ml" target="_blank" style="display: inline-block; background: #25d366; color: white; padding: 0.8rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: bold;">💬 Chat por WhatsApp</a>
+                    </div>
+                </div>
+                <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="https://mitocondrialab.com/images/bac-water-3ml.jpg" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    <div style="padding: 1rem;">
+                        <h3 style="color: #003d7a; font-size: 1.1rem;">BAC Water 3ml</h3>
+                        <p style="color: #666; margin: 0.5rem 0;">Agua bacteriostática estéril</p>
+                        <p style="color: #1a73e8; font-size: 1.3rem; font-weight: bold; margin: 1rem 0;">$20</p>
+                        <a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20me%20interesa%20la%20BAC%20Water%203ml" target="_blank" style="display: inline-block; background: #25d366; color: white; padding: 0.8rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: bold;">💬 Chat por WhatsApp</a>
+                    </div>
+                </div>
+                <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="https://mitocondrialab.com/images/syringe-accessories.jpg" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    <div style="padding: 1rem;">
+                        <h3 style="color: #003d7a; font-size: 1.1rem;">Syringe & Accessories</h3>
+                        <p style="color: #666; margin: 0.5rem 0;">Jeringas estériles y accesorios</p>
+                        <p style="color: #1a73e8; font-size: 1.3rem; font-weight: bold; margin: 1rem 0;">$2</p>
+                        <a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20me%20interesa%20Syringe%20%26%20Accessories" target="_blank" style="display: inline-block; background: #25d366; color: white; padding: 0.8rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: bold;">💬 Chat por WhatsApp</a>
+                    </div>
+                </div>
+                <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="https://mitocondrialab.com/images/insulin-cooler.jpg" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    <div style="padding: 1rem;">
+                        <h3 style="color: #003d7a; font-size: 1.1rem;">Insulin Cooler Travel Case</h3>
+                        <p style="color: #666; margin: 0.5rem 0;">Mantén tu medicina refrigerada por 60 horas</p>
+                        <p style="color: #1a73e8; font-size: 1.3rem; font-weight: bold; margin: 1rem 0;">$40</p>
+                        <div style="display: flex; gap: 0.5rem;">
+                          <a href="/productos/insulin-cooler.html" style="flex: 1; background: #1a73e8; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Ver Más</a>
+                          <a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20me%20interesa%20el%20Insulin%20Cooler%20Travel%20Case" target="_blank" style="flex: 1; background: #25d366; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Consultar</a>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: #f8f9fa; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="https://mitocondrialab.com/images/refill-pen.jpg" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+                    <div style="padding: 1rem;">
+                        <h3 style="color: #003d7a; font-size: 1.1rem;">Pluma Premium</h3>
+                        <p style="color: #666; margin: 0.5rem 0;">Pluma de inyección para péptidos</p>
+                        <p style="color: #1a73e8; font-size: 1.3rem; font-weight: bold; margin: 1rem 0;">$50</p>
+                        <div style="display: flex; gap: 0.5rem;">
+                          <a href="https://mitocondrialab.com/productos/refill-pen.html" style="flex: 1; background: #1a73e8; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Ver Más</a>
+                          <a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20me%20interesa%20la%20Pluma%20Premium" target="_blank" style="flex: 1; background: #25d366; color: white; padding: 0.8rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-align: center;">Consultar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="hero">
+        <h1>Mitocondria Lab</h1>
+        <p>Péptidos de investigación con certificación de pureza. Análisis HPLC/MS de terceros independientes.</p>
+    </div>
+
+    <div class="container">
+        <!-- PÉPTIDOS -->
+        <!-- GARANTÍA DE CALIDAD -->
+        <div class="cert-section" style="padding: 2rem 2rem; background: #f8f9fa; margin: 1rem 0; border-radius: 8px;">
+            <h3 style="font-size: 1.6rem; color: #003d7a; margin-bottom: 2.5rem; text-align: center;">🔬 Garantía de Calidad & Análisis Certificados</h3>
+            
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="display: flex; gap: 1.5rem; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid #ddd;">
+                    <div style="font-size: 1.5rem; min-width: 40px; color: #003d7a;">✓</div>
+                    <div>
+                        <h4 style="color: #003d7a; margin-bottom: 0.5rem; font-size: 1.1rem;">Análisis HPLC (Cromatografía Líquida de Alta Resolución)</h4>
+                        <p style="color: #666; line-height: 1.6;">Pureza de péptidos >98%. Identificación de estructura molecular y detección de contaminantes. Realizado por laboratorios independientes acreditados.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1.5rem; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid #ddd;">
+                    <div style="font-size: 1.5rem; min-width: 40px; color: #003d7a;">✓</div>
+                    <div>
+                        <h4 style="color: #003d7a; margin-bottom: 0.5rem; font-size: 1.1rem;">Espectrometría de Masas (MS)</h4>
+                        <p style="color: #666; line-height: 1.6;">Determinación exacta del peso molecular. Confirmación de identidad del péptido. Análisis de impurezas y fragmentos degradados.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1.5rem; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid #ddd;">
+                    <div style="font-size: 1.5rem; min-width: 40px; color: #003d7a;">✓</div>
+                    <div>
+                        <h4 style="color: #003d7a; margin-bottom: 0.5rem; font-size: 1.1rem;">Análisis Microbiológico</h4>
+                        <p style="color: #666; line-height: 1.6;">Verificación de esterilidad. Conteo bacteriano y de hongos. Ausencia de patógenos. Cumplimiento de estándares farmacéuticos USP/EP.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1.5rem; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid #ddd;">
+                    <div style="font-size: 1.5rem; min-width: 40px; color: #003d7a;">✓</div>
+                    <div>
+                        <h4 style="color: #003d7a; margin-bottom: 0.5rem; font-size: 1.1rem;">Certificado de Análisis (COA)</h4>
+                        <p style="color: #666; line-height: 1.6;">Disponible para cada lote. Documentación completa de pruebas. Trazabilidad batch-específica. Transparencia total sobre composición.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1.5rem; margin-bottom: 0; padding-bottom: 0;">
+                    <div style="font-size: 1.5rem; min-width: 40px; color: #003d7a;">✓</div>
+                    <div>
+                        <h4 style="color: #003d7a; margin-bottom: 0.5rem; font-size: 1.1rem;">Fabricación con Estándares GMP</h4>
+                        <p style="color: #666; line-height: 1.6;">Producción bajo Buenas Prácticas de Manufactura. Control de calidad en cada etapa. Consistencia batch-to-batch garantizada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- POR QUÉ ELEGIRNOS -->
+        <div class="why-choose" style="padding: 2rem 1.5rem; max-width: 1200px; margin: 0 auto;">
+            <style>
+                @media (max-width: 768px) {
+                    .why-choose { padding: 2rem 1rem !important; }
+                    .why-item { padding: 1.5rem !important; }
+                }
+            </style>
+            <h3 style="font-size: 1.6rem; color: #003d7a; margin-bottom: 3rem; text-align: center;">Por Qué Elegir Mitocondria Lab</h3>
+            <div class="why-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem;">
+                <div class="why-item" style="background: white; padding: 2rem; margin: 0 0.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🏆</div>
+                    <h4 style="color: #003d7a; margin-bottom: 0.8rem; font-size: 1.1rem;">Pureza Garantizada</h4>
+                    <p style="color: #666; line-height: 1.6;">Mínimo 98% pureza con análisis HPLC independiente para cada batch.</p>
+                </div>
+                <div class="why-item" style="background: white; padding: 2rem; margin: 0 0.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📋</div>
+                    <h4 style="color: #003d7a; margin-bottom: 0.8rem; font-size: 1.1rem;">Documentación Completa</h4>
+                    <p style="color: #666; line-height: 1.6;">Certificados de análisis, COA y trazabilidad batch-específica disponibles.</p>
+                </div>
+                <div class="why-item" style="background: white; padding: 2rem; margin: 0 0.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🔒</div>
+                    <h4 style="color: #003d7a; margin-bottom: 0.8rem; font-size: 1.1rem;">Envío Discreto & Seguro</h4>
+                    <p style="color: #666; line-height: 1.6;">Empaque profesional, rastreo en tiempo real, entrega confidencial.</p>
+                </div>
+                <div class="why-item" style="background: white; padding: 2rem; margin: 0 0.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">💬</div>
+                    <h4 style="color: #003d7a; margin-bottom: 0.8rem; font-size: 1.1rem;">Soporte Técnico</h4>
+                    <p style="color: #666; line-height: 1.6;">Respuesta en 24 horas. Asesoramiento sobre reconstitución y dosificación.</p>
+                </div>
+                <div class="why-item" style="background: white; padding: 2rem; margin: 0 0.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">💰</div>
+                    <h4 style="color: #003d7a; margin-bottom: 0.8rem; font-size: 1.1rem;">Precios Competitivos</h4>
+                    <p style="color: #666; line-height: 1.6;">Descuentos por volumen y compras mayoristas disponibles.</p>
+                </div>
+                <div class="why-item" style="background: white; padding: 2rem; margin: 0 0.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🌐</div>
+                    <h4 style="color: #003d7a; margin-bottom: 0.8rem; font-size: 1.1rem;">Envío Internacional</h4>
+                    <p style="color: #666; line-height: 1.6;">Disponible a múltiples países con cumplimiento de regulaciones locales.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- REVIEWS/TESTIMONIOS -->
+        <div style="background: #f8f9fa; padding: 2rem 2rem; margin-top: 1rem;">
+            <div style="max-width: 1200px; margin: 0 auto;">
+        <!-- REVIEWS/TESTIMONIOS -->
+        <div style="background: #f8f9fa; padding: 2rem 2rem; margin-top: 1rem;">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="text-align: center; font-size: 1.8rem; color: #003d7a; margin-bottom: 3rem;">Lo Que Dicen Nuestros Clientes</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <!-- Review 1: Mr. Glucosa -->
+                    <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #1a73e8;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div style="flex-grow: 1;">
+                                <h4 style="color: #003d7a; margin: 0; font-size: 1.1rem;">Mr. Glucosa</h4>
+                                <p style="color: #666; margin: 0.3rem 0; font-size: 0.9rem;">📍 Guayaquil</p>
+                            </div>
+                            <div style="color: #FFB800; font-size: 1.2rem;">★★★★★</div>
+                        </div>
+                        <p style="color: #555; line-height: 1.6; margin: 0; font-style: italic;">
+                            "Yo les compré a mitocondrialab y me fue bien; usé el retatrutide 10 mg y validé sus lab tests de 3eros en Janoshik. Buena calidad"
+                        </p>
+                    </div>
+
+                    <!-- Review 2: Carlos R. -->
+                    <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #1a73e8;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div style="flex-grow: 1;">
+                                <h4 style="color: #003d7a; margin: 0; font-size: 1.1rem;">Carlos R.</h4>
+                                <p style="color: #666; margin: 0.3rem 0; font-size: 0.9rem;">📍 Quito</p>
+                            </div>
+                            <div style="color: #FFB800; font-size: 1.2rem;">★★★★★</div>
+                        </div>
+                        <p style="color: #555; line-height: 1.6; margin: 0; font-style: italic;">
+                            "Envío rápido y tal cual lo prometido. Llegó en perfectas condiciones, bien empaquetado y discreto. Exactamente lo que necesitaba. Volvería a comprar sin dudarlo."
+                        </p>
+                    </div>
+
+                    <!-- Review 3: Daniela M. -->
+                    <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid #1a73e8;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <div style="flex-grow: 1;">
+                                <h4 style="color: #003d7a; margin: 0; font-size: 1.1rem;">Daniela M.</h4>
+                                <p style="color: #666; margin: 0.3rem 0; font-size: 0.9rem;">📍 Manta</p>
+                            </div>
+                            <div style="color: #FFB800; font-size: 1.2rem;">★★★★★</div>
+                        </div>
+                        <p style="color: #555; line-height: 1.6; margin: 0; font-style: italic;">
+                            "He bajado 8 libras en dos semanas y el servicio es increíble. Eduardo Torres me incluyó de regalo jeringuillas y pañitos de alcohol. Excelente atención al cliente. Muy satisfecha con los resultados."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="contact-section" id="contacto" style="background: linear-gradient(135deg, #003d7a 0%, #1a73e8 100%); padding: 3rem 2rem; text-align: center; color: white; margin-top: 3rem;">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h3 style="font-size: 1.6rem; margin-bottom: 1.5rem;">📧 Información y Consultas</h3>
+                <p style="margin-bottom: 2rem; line-height: 1.6;">Para preguntas sobre productos, especificaciones técnicas o pedidos personalizados:</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;">
+                    <a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20p%C3%A9ptidos." target="_blank" style="display: inline-block; background: #25d366; color: white; padding: 1rem 2rem; border-radius: 4px; text-decoration: none; font-weight: bold; transition: background 0.3s;">💬 Contactar por WhatsApp</a>
+                </div>
+
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    <strong>WhatsApp Business:</strong><br>
+                    +593 987 577 997<br>
+                    <em>Disponible 24/7</em>
+                </p>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <!-- FOOTER -->

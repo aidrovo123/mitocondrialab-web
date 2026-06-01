@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CJC-1295 10mg - Mitocondria Lab</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; color: #333; }
+        header {
+            background: #003d7a;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        nav { margin-top: 1rem; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.95rem;
+        }
+        nav a:hover { text-decoration: underline; }
+        
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 2rem;
+            align-items: start;
+        }
+        
+        .product-image {
+            text-align: center;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .product-info h2 {
+            color: #003d7a;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            color: #1a73e8;
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #ff4444;
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .rating {
+            color: #f59e0b;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .description {
+            color: #666;
+            line-height: 1.8;
+            margin: 1.5rem 0;
+            font-size: 1rem;
+        }
+        
+        .features {
+            background: #f0f7ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .features h3 {
+            color: #003d7a;
+            margin-bottom: 1rem;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #1a73e8;
+            font-weight: bold;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: #1a73e8;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1557c0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+        }
+        
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+        
+        .specs {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .specs h3 {
+            color: #003d7a;
+            margin-bottom: 1rem;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .spec-item:last-child { border-bottom: none; }
+        .spec-label { font-weight: bold; color: #333; }
+        .spec-value { color: #666; }
+        
+        footer {
+            background: #003d7a;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .product-container { grid-template-columns: 1fr; gap: 2rem; padding: 1rem; }
+            .product-info h2 { font-size: 1.5rem; }
+            .price { font-size: 2rem; }
+            .button-group { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🧬 Mitocondria Lab</h1>
+        <nav>
+            <a href="https://mitocondrialab.com">← Volver a Tienda</a>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="product-container">
+            <div class="product-image">
+                <img src="https://mitocondrialab.com/images/cjc-1295-vial.jpg" alt="CJC-1295 10mg Vial">
+            </div>
+            
+            <div class="product-info">
+                <div class="badge">⚠️ Low Stock</div>
+                <h2>CJC-1295 10mg Vial</h2>
+                <div class="rating">⭐⭐⭐⭐⭐ (Research Grade - Certified Purity)</div>
+                <div class="price">$250</div>
+                
+                <p class="description">
+                    <strong>CJC-1295</strong> es un péptido GHRH (hormona liberadora de hormona del crecimiento) modificado que estimula la liberación natural de hormona del crecimiento. Con alta pureza verificada y análisis certificado, es ideal para investigación en optimización hormonal y ciclos de mejora de rendimiento.
+                </p>
+                
+                <div class="features">
+                    <h3>Características Principales</h3>
+                    <ul>
+                        <li><strong>Tipo:</strong> Péptido GHRH (Growth Hormone Releasing Hormone)</li>
+                        <li><strong>Dosis:</strong> 10mg por vial</li>
+                        <li><strong>Pureza:</strong> >99% verificada por análisis HPLC/MS</li>
+                        <li><strong>Certificación:</strong> Análisis de terceros independientes</li>
+                        <li><strong>Mecanismo:</strong> Estimula liberación endógena de GH</li>
+                        <li><strong>Aplicación:</strong> Investigación en longevidad y optimización corporal</li>
+                        <li><strong>Stock:</strong> Bajo (últimas unidades disponibles)</li>
+                        <li><strong>Batch:</strong> Verificado (No. 011, fecha 19-04-2026)</li>
+                    </ul>
+                </div>
+                
+                <div class="specs">
+                    <h3>Especificaciones Técnicas</h3>
+                    <div class="spec-item">
+                        <span class="spec-label">Nombre:</span>
+                        <span class="spec-value">CJC-1295 (Drug Affinity Complex)</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Presentación:</span>
+                        <span class="spec-value">Polvo liofilizado en vial de vidrio</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Dosis:</span>
+                        <span class="spec-value">10mg por vial</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Pureza HPLC:</span>
+                        <span class="spec-value">>99%</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Análisis MS:</span>
+                        <span class="spec-value">Confirmación de identidad molecular</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Almacenamiento:</span>
+                        <span class="spec-value">2-8°C (refrigerado)</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Reconstitución:</span>
+                        <span class="spec-value">BAC Water estéril (incluir aparte)</span>
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <a href="https://wa.me/593987577997?text=Hola%20Mitocondria%20Lab%2C%20estoy%20interesado%20en%20CJC-1295%2010mg%20%28%24250%29.%20Tengo%20bajo%20stock%2C%20por%20favor%20confirmar%20disponibilidad." class="btn btn-whatsapp">💬 Consultar Disponibilidad</a>
+                    <a href="https://mitocondrialab.com" class="btn btn-primary">Volver a Tienda</a>
+                </div>
+                
+                <p style="margin-top: 2rem; color: #666; font-size: 0.9rem;">
+                    <strong>🔬 Compuesto de Investigación:</strong> Vendido para propósitos de investigación química únicamente.<br><br>
+                    <strong>✅ Garantía de calidad:</strong> Todos nuestros péptidos incluyen análisis HPLC/MS de terceros independientes, esterilidad verificada y certificación de pureza.
+                </p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Mitocondria Lab | Todos los derechos reservados</p>
+        <p>Teléfono: +593 987 577 997 | Email: info@mitocondrialab.com</p>
+    </footer>
+</body>
+</html>
