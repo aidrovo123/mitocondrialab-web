@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NAD+ 500mg - Nicotinamida Adenina Dinucleótido. Energía celular, longevidad, reparación de ADN. Información científica completa.">
+    <title>NAD+ 500mg - Energía Celular y Longevidad | Mitocondria Lab</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #003d7a; --primary-light: #0052a3; --accent: #1a73e8; --text: #202124; --text-light: #5f6368; --bg: #ffffff; --bg-light: #f8f9fa; --border: #dadce0; --success: #188038; --warning: #f57c00; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; line-height: 1.7; color: var(--text); background: var(--bg); }
+        header { background: var(--primary); color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .header-content { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: white; }
+        .logo img { width: 35px; height: 35px; border-radius: 50%; }
+        nav a { color: white; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .back-link:hover { text-decoration: underline; }
+        .product-header { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; align-items: start; }
+        .product-image { width: 100%; max-height: 500px; background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .product-image img { width: 100%; height: auto; object-fit: contain; padding: 20px; }
+        .product-details h1 { font-size: 2.2rem; color: var(--primary); margin-bottom: 0.5rem; }
+        .product-details .subtitle { font-size: 1.1rem; color: var(--text-light); margin-bottom: 1rem; }
+        .product-details .price { font-size: 1.8rem; color: var(--accent); font-weight: 700; margin-bottom: 1.5rem; }
+        .product-details .specs { font-size: 0.95rem; color: var(--text-light); margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); line-height: 1.8; }
+        .product-details .specs strong { color: var(--primary); }
+        .btn { display: inline-block; padding: 0.9rem 2rem; background: var(--accent); color: white; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.3s; font-size: 0.95rem; }
+        .btn:hover { background: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3); }
+        .btn-whatsapp { background: #25d366; }
+        .btn-whatsapp:hover { background: #1da853; }
+        .section { margin: 2.5rem 0; padding: 2rem; background: var(--bg-light); border-radius: 8px; border-left: 5px solid var(--accent); }
+        .section h2 { color: var(--primary); font-size: 1.5rem; margin-bottom: 1.2rem; }
+        .section h3 { color: var(--primary-light); font-size: 1.1rem; margin-top: 1.2rem; margin-bottom: 0.6rem; font-weight: 600; }
+        .section p { margin-bottom: 0.8rem; color: var(--text); }
+        .section ul { margin-left: 2rem; margin-bottom: 1rem; }
+        .section li { margin-bottom: 0.6rem; color: var(--text); }
+        .section ol { margin-left: 2rem; margin-bottom: 1rem; }
+        .section ol li { margin-bottom: 0.6rem; }
+        .table-responsive { overflow-x: auto; margin: 1rem 0; }
+        table { width: 100%; border-collapse: collapse; background: white; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--primary); color: white; font-weight: 600; }
+        tr:hover { background: #f5f5f5; }
+        .benefit-box { background: white; padding: 1.5rem; border-left: 4px solid var(--success); margin-bottom: 1rem; border-radius: 4px; }
+        .benefit-box strong { color: var(--success); }
+        .warning-box { background: #fff3e0; padding: 1.5rem; border-left: 4px solid var(--warning); margin: 1.5rem 0; border-radius: 4px; }
+        .warning-box strong { color: var(--warning); }
+        .info-box { background: #e3f2fd; padding: 1.5rem; border-left: 4px solid var(--accent); margin: 1.5rem 0; border-radius: 4px; }
+        .mechanism-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1rem 0; }
+        .mech-card { background: white; padding: 1.5rem; border: 1px solid var(--border); border-radius: 6px; }
+        .mech-card h4 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1rem; }
+        .mech-card p { font-size: 0.9rem; color: var(--text-light); margin: 0; }
+        footer { background: var(--primary); color: white; padding: 2rem; text-align: center; margin-top: 3rem; font-size: 0.85rem; }
+        .research-label { display: inline-block; background: var(--accent); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
+        @media (max-width: 768px) { 
+            .product-header { grid-template-columns: 1fr; gap: 2rem; }
+            .mechanism-grid { grid-template-columns: 1fr; }
+            .section { padding: 1.5rem; }
+            .section h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo"><img src="/favicon.svg" alt="Logo"> Mitocondria Lab</a>
+            <nav><a href="/">Volver</a></nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="/" class="back-link">← Volver a productos</a>
+
+        <div class="product-header">
+            <div class="product-image"><img src="/images/nad-plus-vial.jpg" alt="NAD+ 500mg Powder"></div>
+            <div class="product-details">
+                <h1>NAD+</h1>
+                <div class="subtitle">Nicotinamida Adenina Dinucleótido - 500mg</div>
+                <span class="research-label">🧪 RESEARCH CHEMICALS</span>
+                <div class="specs">
+                    <strong>Especificaciones:</strong><br>
+                    Dosis: 500mg / Frasco<br>
+                    Forma: Polvo liofilizado<br>
+                    Pureza: >98% (HPLC)<br>
+                    Origen: Laboratorio certificado<br>
+                    Análisis: MS confirmado
+                </div>
+                <div class="price">$135 USD</div>
+                <a href="https://wa.me/593983997421?text=Hola%20Mitocondria%20Lab%2C%20me%20interesa%20NAD%2B%20500mg%20-%20información%20completa" target="_blank" class="btn btn-whatsapp">💬 Consultar Disponibilidad</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>¿Qué es NAD+?</h2>
+            <p><strong>NAD+ (Nicotinamida Adenina Dinucleótido)</strong> es una coenzima presente en todas las células vivas que actúa como coactor crítico en procesos de energía celular, reparación de ADN y regulación de longevidad.</p>
+            <p>Los niveles de NAD+ disminuyen naturalmente con la edad, contribuyendo a disfunción mitocondrial, envejecimiento acelerado y declive metabólico. La suplementación con NAD+ busca restablecer estas vías críticas de energía y longevidad.</p>
+            <p>NAD+ actúa como "moneda energética" dentro de células, participando en procesos como <strong>glucólisis, oxidación de grasas, reparación de ADN y regulación circadiana</strong>. Su restauración es fundamental para optimización metabólica y anti-envejecimiento.</p>
+        </div>
+
+        <div class="section">
+            <h2>Beneficios Clave Bajo Investigación</h2>
+            
+            <div class="benefit-box">
+                <strong>1. Energía Celular Aumentada</strong>
+                <p>NAD+ es sustrato directo para la producción de ATP en mitocondrias. Niveles elevados mejoran eficiencia mitocondrial, reducen fatiga y aumentan resistencia general. Documentado en múltiples modelos in vitro e in vivo.</p>
+            </div>
+
+            <div class="benefit-box">
+                <strong>2. Reparación de ADN Acelerada</strong>
+                <p>PARP y SIRT1 (proteínas reparadoras de ADN) dependen de NAD+ como cosubstrato. Mayor disponibilidad de NAD+ mejora la capacidad de reparación de daño oxidativo y radiación, especialmente importante en estrés celular.</p>
+            </div>
+
+            <div class="benefit-box">
+                <strong>3. Función Mitocondrial Optimizada</strong>
+                <p>NAD+ restaura la eficiencia de la cadena de transporte de electrones y desacoplamiento mitocondrial controlado. Mejora oxidación de grasas, producción de ATP y reducción de especies reactivas de oxígeno (ROS).</p>
+            </div>
+
+            <div class="benefit-box">
+                <strong>4. Activación de Proteínas de Longevidad (SIRTs)</strong>
+                <p>Las sirtuínas (SIRT1-7) son reguladores maestros del envejecimiento que requieren NAD+ como coenzima. NAD+ elevado activa estas vías anti-envejecimiento, mejorando autofagia, metabolismo y resistencia al estrés.</p>
+            </div>
+
+            <div class="benefit-box">
+                <strong>5. Mejora Metabolismo de Glucosa</strong>
+                <p>NAD+ participa en glucólisis y regula sensibilidad a insulina vía SIRT1. Niveles elevados mejoran control glucémico y reducen resistencia a insulina documentado en estudios de diabetes tipo 2.</p>
+            </div>
+
+            <div class="benefit-box">
+                <strong>6. Oxigenación y Flujo Sanguíneo</strong>
+                <p>NAD+ estimula producción de óxido nítrico (NO) vía SIRT1, mejorando vasodilatación y flujo sanguíneo. Aumento de oxígeno tisular y circulación periférica mejorada.</p>
+            </div>
+
+            <div class="benefit-box">
+                <strong>7. Función Cognitiva y Neuroplasticidad</strong>
+                <p>Cerebro es altamente dependiente de NAD+ para energía mitocondrial. Restauración de NAD+ mejora plasticidad neuronal, memoria, concentración y protección contra neurodegeneración.</p>
+            </div>
+
+            <div class="benefit-box">
+                <strong>8. Resistencia al Estrés Oxidativo</strong>
+                <p>NAD+ activa enzimas antioxidantes (SOD, catalasa) y participa en sistema de defensa celular contra ROS. Mayor resiliencia ante estrés oxidativo y inflamación crónica de bajo grado.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Mecanismo de Acción Molecular</h2>
+            
+            <h3>NAD+ en Vías Celulares Críticas</h3>
+            <div class="mechanism-grid">
+                <div class="mech-card">
+                    <h4>⚡ Energía (ATP)</h4>
+                    <p><strong>Vías:</strong><br>
+                    Glucólisis → NADH<br>
+                    Ciclo de Krebs → NADH<br>
+                    Cadena de transporte → ATP<br>
+                    Eficiencia mitocondrial ↑</p>
+                </div>
+                <div class="mech-card">
+                    <h4>🧬 Reparación ADN</h4>
+                    <p><strong>Proteínas:</strong><br>
+                    PARP-1 (reparación)<br>
+                    SIRT1-7 (longevidad)<br>
+                    Autofagia ↑<br>
+                    Estrés oxidativo ↓</p>
+                </div>
+                <div class="mech-card">
+                    <h4>🧠 Metabolismo</h4>
+                    <p><strong>Efectos:</strong><br>
+                    Glucólisis optimizada<br>
+                    Oxidación de grasas ↑<br>
+                    Sensibilidad insulina ↑<br>
+                    Circadian rhythm</p>
+                </div>
+            </div>
+
+            <h3>Bioquímica Descendente</h3>
+            <div class="table-responsive">
+                <table>
+                    <tr>
+                        <th>Vía</th>
+                        <th>Coenzima</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td><strong>NADH ↔ NAD+ (ciclo redox)</strong></td>
+                        <td>Glucólisis, Krebs, cadena de transporte</td>
+                        <td>Energía ATP ↑ × 30-40</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SIRT1 (NAD+-dependiente)</strong></td>
+                        <td>PGC-1α, p53, FOXO</td>
+                        <td>Longevidad, autofagia, biogénesis mitocondrial</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PARP (reparación ADN)</strong></td>
+                        <td>Consumo NAD+ (ADP-ribosylation)</td>
+                        <td>Reparación daño ADN optimizada</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PERK (estrés ER)</strong></td>
+                        <td>NAD+-dependiente</td>
+                        <td>Respuesta proteostasis, resiliencia celular</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Farmacocinética y Administración</h2>
+            <ul>
+                <li><strong>Vía:</strong> Intravenosa (IV), intranasal, oral (biodisponibilidad limitada)</li>
+                <li><strong>Forma:</strong> Polvo liofilizado (reconstituir con agua bacteriostática o solución salina)</li>
+                <li><strong>Vida Media:</strong> ~0.5-1 hora (NAD+ es muy lábil; requiere administración frecuente para efecto sostenido)</li>
+                <li><strong>Biodisponibilidad Oral:</strong> <10% (recomendada administración IV o precursores como NMN/NR para vía oral)</li>
+                <li><strong>Estabilidad:</strong> Mantener congelado (-20°C) hasta uso; reconstituir inmediatamente antes de administración</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Aplicaciones Clínicas Bajo Investigación</h2>
+            
+            <h3>Envejecimiento y Longevidad</h3>
+            <p>Restauración de NAD+ puede revertir aspectos del envejecimiento mitocondrial y celular. Ensayos preclínicos muestran extensión de lifespan en modelos murinos via activación SIRT/PGC-1α.</p>
+
+            <h3>Enfermedad Neurológica</h3>
+            <p>NAD+ elevado muestra promesa en Parkinson, Alzheimer y ELA vía neuroprotección mitocondrial y activación de rutas de autofagia. Referencia: Nature Aging, Cell Metabolism.</p>
+
+            <h3>Metabolismo y Obesidad</h3>
+            <p>NAD+ mejora sensibilidad a insulina, oxidación de grasas y metabolismo mitocondrial en diabetes tipo 2 y síndrome metabólico. Estudios en humanos en curso.</p>
+
+            <h3>Función Cardiovascular</h3>
+            <p>Mejora vasodilatación, presión arterial y función endotelial vía óxido nítrico (NO) mediado por SIRT1.</p>
+
+            <div class="info-box">
+                <strong>📋 Nota de Evidencia:</strong> La mayoría de datos es preclínico (in vitro, modelos animales). Ensayos clínicos en humanos son limitados pero muestran resultados prometedores. Resultados a largo plazo en longevidad humana aún pendientes.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Seguridad y Tolerancia</h2>
+            
+            <h3>Efectos Adversos Generales</h3>
+            <p>NAD+ IV es generalmente bien tolerado. Efectos transitorios reportados: enrojecimiento facial, rubor, molestia en sitio de inyección. Raro: náusea, fatiga transitoria (típicamente <24 horas).</p>
+
+            <h3>Consideraciones Especiales</h3>
+            <ul>
+                <li><strong>Estabilidad:</strong> NAD+ es extremadamente lábil; degradación rápida en solución. Preparar y administrar dentro de minutos de reconstitución.</li>
+                <li><strong>Esterilidad:</strong> Protocolo aséptico crítico; NAD+ es blanco de contaminación bacteriana.</li>
+                <li><strong>Solubilidad:</strong> Puede requerir pH buffer específico (fosfato); precipitación posible en algunos solventes.</li>
+                <li><strong>Precauciones:</strong> Evitar luz y calor; almacenar protegido de oxidación.</li>
+            </ul>
+
+            <h3>Contraindicaciones/Precaución</h3>
+            <ul>
+                <li>Hipersensibilidad a niacina o metabolitos de NAD</li>
+                <li>Enfermedad hepática severa (metabolismo vía NAD+)</li>
+                <li>Antecedente de gota (NAD+ puede aumentar ácido úrico transitoriamente)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Análisis de Calidad - Certificaciones</h2>
+            <p>Todos nuestros productos NAD+ cumplen estándares GMP (Good Manufacturing Practice) de laboratorio certificado:</p>
+            <ul>
+                <li><strong>Pureza HPLC:</strong> >98%</li>
+                <li><strong>Espectrometría de Masas (MS):</strong> Confirmación de peso molecular exacto (663.11 Da)</li>
+                <li><strong>Microbiología:</strong> Esterilidad verificada, libre de patógenos</li>
+                <li><strong>Certificado de Análisis:</strong> Disponible por lote, incluido con cada frasco</li>
+                <li><strong>Estabilidad:</strong> Almacenar a -20°C (congelador); proteger de luz y humedad</li>
+            </ul>
+            <div style="text-align: center; margin-top: 2rem;">
+                <p><em>COA disponible - Consulta por WhatsApp para obtenerlo</em></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Estado Regulatorio</h2>
+            <ul>
+                <li><strong>Estado de Aprobación:</strong> Investigacional; no aprobado para uso médico en la mayoría de jurisdicciones</li>
+                <li><strong>Programas Clínicos:</strong> Múltiples ensayos Fase 1/2 en curso para envejecimiento, neurología y metabolismo</li>
+                <li><strong>Uso Fuera de Ensayos:</strong> NAD+ sintético no es equivalente a precursores (NMN/NR); requiere reglamento de administración</li>
+            </ul>
+        </div>
+
+        <div class="section" style="background: #e8f5e9; border-left-color: var(--success);">
+            <h2 style="color: var(--success);">Direcciones Futuras</h2>
+            <ul>
+                <li>Ensayos clínicos Fase 2/3 en longevidad y envejecimiento cerebral</li>
+                <li>Combinaciones con precursores (NMN, NR) para potenciar efectos</li>
+                <li>Protocolos de administración óptima (frecuencia, dosis) para máxima eficacia</li>
+                <li>Biodisponibilidad mejorada mediante nuevas formulaciones o vías de administración</li>
+                <li>Evidencia clínica en metabolismo, función cardiovascular y neuroprotección</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0 2rem 0;">
+            <a href="https://wa.me/593983997421?text=Hola%20Mitocondria%20Lab%2C%20me%20interesa%20NAD%2B%20500mg%20-%20información%20completa" target="_blank" class="btn btn-whatsapp" style="padding: 1.2rem 2.5rem; font-size: 1.1rem;">💬 Consultar Disponibilidad</a>
+        </div>
+
+        <div class="section" style="background: #f3e5f5; border-left-color: #9c27b0; margin-top: 2rem;">
+            <h3 style="color: #7b1fa2;">Referencias Científicas Clave</h3>
+            <ul style="font-size: 0.9rem; color: var(--text-light);">
+                <li><strong>Nature Aging; Cell Metabolism</strong> — Restauración de NAD+ invierte envejecimiento mitocondrial</li>
+                <li><strong>Science</strong> — SIRT1 y longevidad: rol crítico de NAD+ como coenzima</li>
+                <li><strong>EMBO Journal</strong> — PARylation y reparación de ADN dependiente de NAD+</li>
+                <li><strong>Circulation</strong> — Óxido nítrico, SIRT1 y función endotelial mediada por NAD+</li>
+                <li><strong>Diabetes Care</strong> — Mejora sensibilidad insulina en síndrome metabólico</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p style="margin-bottom: 0.5rem;"><strong>Mitocondria Lab</strong> — Péptidos y moléculas de investigación certificadas</p>
+        <p style="margin-bottom: 0.5rem;">🧪 RESEARCH CHEMICALS - Para uso en investigación únicamente</p>
+        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.8);">Consulta a profesionales de salud calificados antes de cualquier uso. No se ofrecen recomendaciones médicas.</p>
+        <p style="font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 1rem;">&copy; 2026 Mitocondria Lab. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
